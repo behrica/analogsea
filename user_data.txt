@@ -1,0 +1,15 @@
+#cloud-config
+
+coreos:
+    units:
+      - name: docker-rs.service
+        command: start
+        content: |
+          [Unit]
+          Description=RStudio service container
+          After=docker.service
+
+          [Service]
+          Restart=always
+          ExecStart=/usr/bin/docker run -p 49000:8787 --name "rstudio" cboettig/rstudio
+          ExecStop=/usr/bin/docker stop rstudio
