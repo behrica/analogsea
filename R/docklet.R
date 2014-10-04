@@ -39,7 +39,7 @@ docklet_create <- function(name = random_name(),
   d <- droplet_new(
     name = name, 
     size = size, 
-    image = "docker",
+    image = "coreos-beta",
     region = region, 
     ssh_keys = ssh_keys,
     backups = backups,

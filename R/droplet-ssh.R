@@ -40,7 +40,7 @@
 #' 
 #' stopifnot(all.equal(mtcars, mtcars2))
 #' }
-droplet_ssh <- function(droplet, ..., user = "root", verbose = FALSE) {
+droplet_ssh <- function(droplet, ..., user = "core", verbose = FALSE) {
   droplet <- as.droplet(droplet)  
   
   lines <- paste(c(...), collapse = " \\\n&& ")
